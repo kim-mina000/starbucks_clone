@@ -98,13 +98,13 @@ header> .inner >.logo {
     color: #777;
     font-size: 12px;
     transition: 0.4s;
+    
   }
   /* input에 포커스 됐을 때 변화 */
   header .sub-menu .search input:focus{
     width: 190px;
     /* border: 1 solid #669900; */
     border-color: #669900;
-
   }
 
   header .sub-menu .search .material-icons{

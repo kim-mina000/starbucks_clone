@@ -9,3 +9,10 @@ const searchInput = divSearch.querySelector('input');
 divSearch.addEventListener('click',function () {
   searchInput.focus(); //요소에 포커스 강제 적용
 })
+
+// input 요소에 포커스focus 되면 placeholder추가 setAttribute
+
+// input 요소에 포커스 해제(blur)되면 placeholder 초기화 
+divSearch.addEventListener('blur', function () {
+  console.log('mm');
+})
