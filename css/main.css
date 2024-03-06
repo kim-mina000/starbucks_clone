@@ -1,0 +1,118 @@
+/* Common */
+body { 
+  /* 기본(공통) 스타일 */
+  font-family: "Nanum Gothic", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #333;
+  /* 위 속성들은 모두 상속되기에 전체 스타일을 한번에 제어 */
+}
+
+a {
+  text-decoration: none;
+}
+
+.inner {
+  /* 고정 길이 = 고정형 */
+  /* width: 1100px; */
+  /* 최대값만 제한 = 반응형 */
+  max-width: 1100px;
+  /* 가로 넓이를 가진 블록 요소를 부모 안에서 가운데 정렬 */
+  margin: 0 auto;
+  /* inner div 기준으로 내부 요소를 absolute로 배치하기 위해 */
+  position: relative;
+}
+
+header {
+}
+
+header> .inner {
+  height: 120px;
+}
+
+header> .inner >.logo {
+  position: absolute;
+  height: 75px;
+  /* Quiz: 로고의 수직 가운데 배치 */
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  }
+
+  header .sub-menu {
+    /* 부모 요소(.inner)에 position 값이 있는지 확인 */
+    /* 부모 div(inner)기준으로 배치됨 */
+    position: absolute;
+    top: 10px;
+    right: 0;
+    /* 자식 요소(메뉴와 검색영역)를 수평 배치 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  header .inner .sub-menu .menu {
+    /* 메뉴 아이템(li)들을 수평 배치 */
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  header .sub-menu ul.menu li a {
+    padding: 11px 16px; /* 클릭할 수 있는 영역을 넓혀주는 효과 */
+    display: block; /* 상하 여백 적용을 위해 변경 */
+    color: #555;
+    font-size: 13px;
+  }
+  header .sub-menu ul.menu li>a:hover{
+    color: #111;
+  }
+  header .sub-menu ul.menu li::before{
+    /* 메뉴 아이템 사이 구분선 */
+    width: 1px;
+    height: 15px;
+    background-color: #e5e5e5;
+    content: ""; /*필수속성*/
+    display:block; /*상하 여백 적용을 위해 변경*/
+    position: absolute;
+    top:0;
+    bottom: 0;
+    margin: auto;
+  }
+  header .sub-menu ul.menu li:first-child::before {
+    /* 첫번째 메뉴 요소의 구분선 숨기기 */
+    display: none;
+  }
+  header .sub-menu .search {
+    position: relative;
+    height: 34px;
+  }
+  header .sub-menu .search input {
+    width: 36px;
+    height: 34px;
+    padding: 4px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    outline: none;
+    background-color: #fff;
+    color: #777;
+    font-size: 12px;
+    transition: 0.4s;
+  }
+  /* input에 포커스 됐을 때 변화 */
+  header .sub-menu .search input:focus{
+    width: 190px;
+    /* border: 1 solid #669900; */
+    border-color: #669900;
+
+  }
+
+  header .sub-menu .search .material-icons{
+    /* 수직 가운데 배치를 위한 세로 높이 */
+    height: 24px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right:5px;
+  }
