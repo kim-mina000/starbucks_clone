@@ -8,11 +8,14 @@ const searchInput = divSearch.querySelector('input');
 // 검색 영역을 클릭하면 input 요소를 포커스 하도록 실행
 divSearch.addEventListener('click',function () {
   searchInput.focus(); //요소에 포커스 강제 적용
-})
+});
 
 // input 요소에 포커스focus 되면 placeholder추가 setAttribute
+searchInput.addEventListener('focus',function () {
+  searchInput.setAttribute("placeholder","통합검색")
+});
 
 // input 요소에 포커스 해제(blur)되면 placeholder 초기화 
-divSearch.addEventListener('blur', function () {
-  console.log('mm');
-})
+searchInput.addEventListener('blur',function () {
+  searchInput.setAttribute("placeholder","")
+});
