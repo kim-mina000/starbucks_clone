@@ -126,6 +126,31 @@ new Swiper('.promotion .swiper', {
     }
   });
 
+  // 유투브 섹션 위에 부유 요소 애니메이션 처리
+  // gsap.to(요소,지속시간,옵션:{})
+  // 옵션참고: http://greensock.com/docs/v3/GSAP/gsap.to()
+gsap.to('.floating1',1.5,{
+  delay: 1, // 얼마나 늦게 애니메이션을 시작할 것인지 지연 시간을 설정
+  y: 15, // 수직으로 얼마나 움직일지 설정, transform:translateY
+  repeat: -1, // 몇 번 반복할지 설정, -1은 무한반복
+  yoyo: true, // 한번 재생된 애니메이션을 다시 뒤로 재생
+  ease: Power1.easeInOut, // 타이밍 함수 적용, 느리게-빠르게-느리게
+})
+gsap.to('.floating2',1.1,{
+  delay: 0.5, // 얼마나 늦게 애니메이션을 시작할 것인지 지연 시간을 설정
+  y: 19, // 수직으로 얼마나 움직일지 설정, transform:translateY
+  repeat: -1, // 몇 번 반복할지 설정, -1은 무한반복
+  yoyo: true, // 한번 재생된 애니메이션을 다시 뒤로 재생
+  ease: Power1.easeInOut, // 타이밍 함수 적용, 느리게-빠르게-느리게
+})
+gsap.to('.floating3',1.6,{
+  delay: 1.2, // 얼마나 늦게 애니메이션을 시작할 것인지 지연 시간을 설정
+  y: 10, // 수직으로 얼마나 움직일지 설정, transform:translateY
+  repeat: -1, // 몇 번 반복할지 설정, -1은 무한반복
+  yoyo: true, // 한번 재생된 애니메이션을 다시 뒤로 재생
+  ease: Power1.easeInOut, // 타이밍 함수 적용, 느리게-빠르게-느리게
+})
+
 
 
 const mainMenuItem = document.querySelectorAll('.item');
@@ -133,6 +158,8 @@ const mainMenuItemContents = document.querySelectorAll('.item__contents');
 
 console.log(mainMenuItem);
 console.log(mainMenuItemContents);
+
+let num = 0;
 
 
 
