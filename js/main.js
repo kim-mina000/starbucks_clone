@@ -85,9 +85,54 @@ fadeEls.forEach(function (fadeEl,index) {
 // 첫번째 인수: 슬라이드 기능을 적용할 요소의 선택자
 // 두번째 인수: 다양한 옵션을 객체 데이터로 전달(API 페이지 참고)
 
-new Swiper('.swiper', {
+new Swiper('.notice .swiper', {
   // Optional parameters
   direction: 'vertical', //수직슬라이드 <-> 수평:horizental
   loop: true, //반복재생여부
   autoplay: true //자동재생여부
 });
+
+// 프로모션 수평 슬라이드 기능
+new Swiper('.promotion .swiper', {
+  // Optional parameters
+  direction: 'horizontal', //수직슬라이드 <-> 수평:horizental
+  loop: true, //반복재생여부
+  autoplay: {delay:5000}, //5초마다 슬라이드 바뀜 (기본값 3000)
+  slidesPerView:3, //한 번에 보여줄 슬라이드 개수 (기본값 1)
+  spaceBetween:10, // 슬라이드 사이 여백(간격)
+  centeredSlides: true, // 1번 슬라이드가 가운데 보이기
+  pagination:{
+    el:'.promotion .swiper-pagination', // 페이지 번호 요소 선택자
+    clickable: true
+  },
+  navigation: { // 슬라이드의 이전/다음 버튼사용
+    nextEl: '.promotion .swiper-button-next',
+    prevEl: '.promotion .swiper-button-prev',
+  }
+});
+
+// 프로모션 섹션 토글 기능
+  const promotionEl = document.querySelector('.promotion');
+  const promotionToggleBtn =  document.querySelector('.toggle-promotion');
+  const promotionToggleIcon = promotionToggleBtn.querySelector('.material-icons');
+
+  promotionToggleBtn.addEventListener('click', function () {
+    if ( promotionEl.classList.contains('hide') == true ) {
+      promotionEl.classList.remove('hide');
+      promotionToggleIcon.innerHTML = "upload"
+    } else if ( promotionEl.classList.contains('hide') == false ) {
+      promotionEl.classList.add('hide');
+      promotionToggleIcon.innerHTML = "download"
+    }
+  });
+
+
+
+const mainMenuItem = document.querySelectorAll('.item');
+const mainMenuItemContents = document.querySelectorAll('.item__contents');
+
+console.log(mainMenuItem);
+console.log(mainMenuItemContents);
+
+
+
