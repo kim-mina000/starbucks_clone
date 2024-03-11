@@ -29,11 +29,11 @@ searchInput.addEventListener('blur',function () {
 const badgeEl = document.querySelector('header .badges');
 const toTop = document.querySelector('#to-top');
 
-toTop.addEventListener('click', function () {
-  gsap.to(window, 0.6 ,{
-    scrollTo: 0 //페이지의 0px 지점(최상단)으로 이동, ScrollToPlugin을 연결해야 사용 가능한 옵션
-  });
-});
+// toTop.addEventListener('click', function () {
+//   gsap.to(window, 0.6 ,{
+//     scrollTo: 0 //페이지의 0px 지점(최상단)으로 이동, ScrollToPlugin을 연결해야 사용 가능한 옵션
+//   });
+// });
 
 // 페이지에 스크롤 이벤트 감지를 추가!
 // window: 브라우저 창 객체 (js를 사용하여 브라우저 전체를 제어 가능)
@@ -87,12 +87,7 @@ fadeEls.forEach(function (fadeEl,index) {
   });
 });
 
-// const itemContents = document.querySelector('.main-menu .item__contents');
 
-// itemContents.addEventListener('mouseenter',function () {
-//   console.log(`dd`);
-//   gsap.to(itemContents,0.7,{ height:'500px'});
-// });
 
 // 공지사항 수직 슬라이드 기능
 // new 키워드로 swiper 객체를 생성=>슬라이드 기능을 생성
@@ -168,31 +163,6 @@ gsap.to('.floating3',1.6,{
 
 
 
-const mainMenuItem = document.querySelectorAll('.item');
-const mainMenuItemContents = document.querySelectorAll('.item__contents');
-
-// document.mainMenuItem[0].addEventListener('click',console.log('1'));
-console.log(mainMenuItem[1].addEventListener('click',console.log('dd')));
-// function showSub() {
-//   if (true) {
-    
-//   }
-  
-// }
-
-// mainMenuItem.forEach(function (itemEl,index) {
-//   itemEl[index].addEventListener('mouseenter',function () {
-//     console.log(index);
-//   })
-// });
-// https://velog.io/@maybe77/%EA%B8%B0%EB%8A%A5%EA%B5%AC%ED%98%84%EB%93%9C%EB%A1%AD%EB%8B%A4%EC%9A%B4-%EB%A9%94%EB%89%B4Dropdown-menu-%EB%A7%8C%EB%93%A4%EA%B8%B0
-
-console.log(mainMenuItem);
-console.log(mainMenuItemContents);
-
-let num = 0;
-
-
 
 // scrollMagic 사용
 // 그 외 scrollreveal 둘다 많이 쓰는 라이브러리
@@ -230,3 +200,38 @@ new Swiper('.awards .swiper', {
 
 // new Date().getFullYear(); // 현재 연도의 정보가 숫자 데이터로 변환됨
 document.querySelector('footer .copyright .this-year').innerHTML = new Date().getFullYear();
+
+
+
+
+// const itemContents = document.querySelector('.main-menu .item__contents');
+
+// itemContents.addEventListener('mouseenter',function () {
+//   console.log(`dd`);
+//   gsap.to(itemContents,0.7,{ height:'500px'});
+// });
+
+
+const mainMenuItem = document.querySelectorAll('.item');
+const mainMenuItemContents = document.querySelectorAll('.item__contents');
+
+// document.mainMenuItem[0].addEventListener('click',console.log('1'));
+console.log(mainMenuItem[1].addEventListener('click',console.log('dd')));
+// function showSub() {
+//   if (true) {
+    
+//   }
+  
+// }
+
+// mainMenuItem.forEach(function (itemEl,index) {
+//   itemEl[index].addEventListener('mouseenter',function () {
+//     console.log(index);
+//   })
+// });
+// https://velog.io/@maybe77/%EA%B8%B0%EB%8A%A5%EA%B5%AC%ED%98%84%EB%93%9C%EB%A1%AD%EB%8B%A4%EC%9A%B4-%EB%A9%94%EB%89%B4Dropdown-menu-%EB%A7%8C%EB%93%A4%EA%B8%B0
+
+console.log(mainMenuItem);
+console.log(mainMenuItemContents);
+
+let num = 0;
