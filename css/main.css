@@ -261,23 +261,24 @@ header> .inner >.logo {
     position: fixed;
     width: 100%;
     left: 0;
-    display: none;
-    transition: 1s;
-    /* display: block; */
-    /* height: 320px; */
-    /*  */
-    /* bottom: 0; */
-    /* overflow: hidden; */
+    /* display: none; */
+
+    overflow: hidden;
     height: 0;
+
     }
-    header .main-menu .item:nth-child(1):hover .item__contents { transition: 1s; background-color: #2c2a29; height: auto; display: block;}
+    /* header .main-menu .item:nth-child(1):hover .item__contents { transition: 1s; background-color: #2c2a29; height: auto; display: block;}
     header .main-menu .item:nth-child(2):hover .item__contents { transition: 1s; background-color: #2c2a29; height: auto; display: block;}
     header .main-menu .item:nth-child(3):hover .item__contents { transition: 1s; background-color: #2c2a29; height: auto; display: block;}
     header .main-menu .item:nth-child(4):hover .item__contents { transition: 1s; background-color: #2c2a29; height: auto; display: block;}
     header .main-menu .item:nth-child(5):hover .item__contents { transition: 1s; background-color: #2c2a29; height: auto; display: block;}
-    header .main-menu .item:nth-child(6):hover .item__contents { transition: 1s; background-color: #2c2a29; height: auto; display: block;}
+    header .main-menu .item:nth-child(6):hover .item__contents { transition: 1s; background-color: #2c2a29; height: auto; display: block;} */
 
-
+    header .main-menu .item .item__contents.active {
+      height: 250px;
+      background-color: #2c2a29;
+      transition: height 1s;
+    }
 
     /* header .main-menu .item:hover .item__contents {
     display: block;

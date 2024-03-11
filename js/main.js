@@ -215,23 +215,41 @@ document.querySelector('footer .copyright .this-year').innerHTML = new Date().ge
 const mainMenuItem = document.querySelectorAll('.item');
 const mainMenuItemContents = document.querySelectorAll('.item__contents');
 
-// document.mainMenuItem[0].addEventListener('click',console.log('1'));
-console.log(mainMenuItem[1].addEventListener('click',console.log('dd')));
-// function showSub() {
-//   if (true) {
-    
-//   }
-  
-// }
-
-// mainMenuItem.forEach(function (itemEl,index) {
-//   itemEl[index].addEventListener('mouseenter',function () {
-//     console.log(index);
-//   })
-// });
-// https://velog.io/@maybe77/%EA%B8%B0%EB%8A%A5%EA%B5%AC%ED%98%84%EB%93%9C%EB%A1%AD%EB%8B%A4%EC%9A%B4-%EB%A9%94%EB%89%B4Dropdown-menu-%EB%A7%8C%EB%93%A4%EA%B8%B0
-
 console.log(mainMenuItem);
 console.log(mainMenuItemContents);
 
-let num = 0;
+// mainMenuItemContents.forEach((menu, index) => {
+//   menu.addEventListener('mouseenter',()=>{
+//     gsap.to(mainMenuItemContents[index], 0.6 ,{
+//       yoyo: true,
+//       ease: Power1.easeInOut,
+//       y:250,
+//       repeat:0,
+//       color: '#2c2a29',
+//       height:300
+//     });
+//   });
+// });
+
+// let a = (num1,num2)=>{ return num1+num2};
+// console.log(a(1,2));
+const Active = document.querySelector('.active');
+
+mainMenuItem.forEach((menu,index) => {
+  menu.addEventListener('mouseenter',()=>{
+    mainMenuItem.forEach(otherMenu => {
+      otherMenu.classList.remove('active');
+    });
+    mainMenuItemContents.forEach(otherCont => {
+      otherCont.classList.remove('active');
+    });
+    // mainMenuItem[index].classList.add('active');
+    //Active.style.height = mainMenuItemContents[index].style.height; //Cannot read properties of null (reading 'style') at HTMLLIElement.
+    mainMenuItemContents[index].classList.add('active');
+  });
+  
+  menu.addEventListener('mouseleave', ()=>{
+    mainMenuItemContents[index].classList.remove('active');
+  });
+});
+
