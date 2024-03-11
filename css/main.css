@@ -66,6 +66,7 @@ img {
 .btn:hover{
   background-color: #333;
   color: #fff;
+  /* transition-delay: 0s; */
 }
 
 .btn.btn--brown{
@@ -760,9 +761,14 @@ header> .inner >.logo {
   bottom: 0;
 }
 
+/* PICK YOUR FAVORITE */
 .pick-your-favorite {
   background-image: url('../images/favorite_bg.jpg');
-  /* background-repeat: no-repeat; */
+  /* 배경 이미지에 시차 효과(parallax)주기 */
+  background-attachment: fixed; /* 배경이미지가 뷰포트에 고정 */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .pick-your-favorite .inner{
   padding: 110px 0;
@@ -785,10 +791,52 @@ header> .inner >.logo {
 /* RESERVE-STORE */ 
 .reserve-store {
   background-image: url('../images/reserve_store_bg.jpg');
+  background-attachment: fixed; /* 배경이미지가 뷰포트에 고정 */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .reserve-store .inner {
   height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.reserve-store .medal {
+  width: 334px;
+  height: 334px;
+  /* 회전하는 요소의 부모 요소에 원근 거리를 추가 */
+  perspective: 600px;
+
+}
+.reserve-store .medal .front, .reserve-store .medal .back {
+  position: absolute;
+  backface-visibility: hidden; /* 회전된 요소의 뒷면을 숨김 */
+  transition: 2s;
+
+}
+.reserve-store .medal .front {
+  transform: rotateY(0deg);
+}
+.reserve-store .medal:hover .front {
+  transform: rotateY(180deg);
+}
+.reserve-store .medal .back {
+  transform: rotateY(-180deg);
+  position: relative;
+}
+.reserve-store .medal:hover .back {
+  transform: rotateY(0deg);
+}
+.reserve-store .medal .back .btn {
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
 
 /* FIND STORE */
 .find-store {
@@ -835,3 +883,115 @@ header> .inner >.logo {
   margin-bottom: 20px;
 }
 
+/* AWARDS */
+.awards {
+  background-color: #272727;
+}
+.awards .inner {
+  padding: 40px 0;
+}
+.awards .swiper{
+  width: 100%;
+  height: 40px;
+}
+.awards .swiper-button-prev, .awards .swiper-button-next {
+  width: 42px;
+  height: 42px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  opacity: 0.3;
+}
+.awards .swiper-button-prev { left: -100px; } 
+.awards .swiper-button-next { right: -100px; }
+.awards .swiper-button-prev:hover, .awards .swiper-button-next:hover {
+  background-color: #fff;
+  color: #333;
+}
+.awards .swiper-button-prev::after, .awards .swiper-button-next::after {
+  display: none;
+}
+
+/* FOOTER */
+footer{
+  background-color: #272727;
+  border-top: 1px solid #333;
+}
+
+footer .inner {
+  padding: 40px 0 60px;
+}
+footer .inner .menu {
+  display: flex;
+  justify-content: center;
+
+}
+footer .inner .menu li {
+  padding: 20px 20px;
+  position: relative;
+}
+footer .inner .menu li::before {
+  width: 3px;
+  height: 3px;
+  background-color: #555;
+  content: "";
+  display: block;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: 0px;
+}
+footer .inner .menu li:last-child:before
+{ display: none; }
+footer .inner .menu li a { 
+  display: block; /* 상하 여백적용을 위해 */
+  font-size: 12px;
+  font-weight: 700;
+  color: #c8c8c8; 
+}
+footer .inner .menu li a:hover {
+  color: #669900;
+}
+footer .inner .menu .green{
+  color: #669900;
+}
+
+/* 방법1. margin-right를 주고 마지막 요소의 margin 값제거 */
+/* 방법2. colum-gap값을 주기 */
+/* 방법3. 인접형제 선택자 .btn+btn */
+footer .inner .btn-group{
+  display: flex;
+  justify-content: center;
+  column-gap: 10px;
+}
+footer .inner .btn-group a {
+  width: 160px;
+  margin: 10px 0px;
+}
+
+footer .info {
+  margin-top: 30px;
+  text-align: center;
+}
+footer .info span {
+  color: #999;
+  font-size: 12px;
+}
+footer .info span+span {
+  margin-left: 20px;
+}
+footer .copyright {
+  color: #999;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 12px;
+}
+footer .logo {
+    /* right: 0;
+    left: 0;
+    margin: auto;
+    margin-top:30px; */
+  margin: 30px auto 0;
+}

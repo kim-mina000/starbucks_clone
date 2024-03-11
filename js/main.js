@@ -153,23 +153,26 @@ gsap.to('.floating3',1.6,{
 
 
 
-// const mainMenuItem = [];
-// document.querySelectorAll('.item').array.forEach(element => {
-//   mainMenuItem.push(element)
-// });;
-// const mainMenuItemContents = document.querySelectorAll('.item__contents');
+const mainMenuItem = document.querySelectorAll('.item');
+const mainMenuItemContents = document.querySelectorAll('.item__contents');
 
-// console.log(mainMenuItem);
-// console.log(mainMenuItemContents);
+// mainMenuItem.forEach(function (itemEl,index) {
+//   itemEl[index].addEventListener('mouseenter',function () {
+//     console.log(index);
+//   })
+// });
+// https://velog.io/@maybe77/%EA%B8%B0%EB%8A%A5%EA%B5%AC%ED%98%84%EB%93%9C%EB%A1%AD%EB%8B%A4%EC%9A%B4-%EB%A9%94%EB%89%B4Dropdown-menu-%EB%A7%8C%EB%93%A4%EA%B8%B0
 
-// let num = 0;
+console.log(mainMenuItem);
+console.log(mainMenuItemContents);
+
+let num = 0;
 
 
 
 // scrollMagic 사용
 // 그 외 scrollreveal 둘다 많이 쓰는 라이브러리
 const spyEls = document.querySelectorAll('section.scroll-spy');
-console.log(spyEls);
 spyEls.forEach(function (spyEl) {
   new ScrollMagic.Scene({ //감시할 장면(Scene) 추가 및 옵션지정
     triggerElement: spyEl, //보여짐 여부를 감시할 요소를 지정
@@ -180,3 +183,20 @@ spyEls.forEach(function (spyEl) {
   // 라이브러리에서 지정한 문법으로 깊게 이해x  
 });
 
+// 프로모션 수평 슬라이드 기능
+new Swiper('.awards .swiper', {
+  // Optional parameters
+  direction: 'horizontal', //수직슬라이드 <-> 수평:horizental
+  loop: true, //반복재생여부
+  autoplay: {
+   delay: 3000, //5초마다 슬라이드 바뀜 (기본값 3000)
+   disableOnInteraction: false //마우스 눌러도 정지x
+  }, 
+  slidesPerView:5, //한 번에 보여줄 슬라이드 개수 (기본값 1)
+  spaceBetween:30, // 슬라이드 사이 여백(간격)
+  centeredSlides: true, // 1번 슬라이드가 가운데 보이기
+  navigation: { // 슬라이드의 이전/다음 버튼사용
+    nextEl: '.awards .swiper-button-next',
+    prevEl: '.awards .swiper-button-prev',
+  }
+});
