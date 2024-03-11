@@ -27,6 +27,13 @@ searchInput.addEventListener('blur',function () {
 
 // 스크롤 시 전역 배지(고정 배너) 숨기기
 const badgeEl = document.querySelector('header .badges');
+const toTop = document.querySelector('#to-top');
+
+toTop.addEventListener('click', function () {
+  gsap.to(window, 0.6 ,{
+    scrollTo: 0 //페이지의 0px 지점(최상단)으로 이동, ScrollToPlugin을 연결해야 사용 가능한 옵션
+  });
+});
 
 // 페이지에 스크롤 이벤트 감지를 추가!
 // window: 브라우저 창 객체 (js를 사용하여 브라우저 전체를 제어 가능)
@@ -42,18 +49,26 @@ window.addEventListener('scroll',function () {
     // badgeEl.style.opacity = 1;
     // badgeEl.style.visibility = "visible";
     // 애니메이션 라이브러리 사용 gsap cdn
-  // gsap.to (애니메이션처리를 할 '요소' , 애니메이션 '지속시간','옵션(데이터 타입 객체':{}) css속성을 통해 애니메이셔 처리
+    // gsap.to (애니메이션처리를 할 '요소' , 애니메이션 '지속시간','옵션(데이터 타입 객체':{}) css속성을 통해 애니메이셔 처리
     gsap.to(badgeEl,0.6,{
-    opacity: 1 ,
-    display: "block"
-  });  
+      opacity: 1 ,
+      display: "block"
+    });  
 
-} else {
+    gsap.to(toTop,0.6,{
+      opacity: 0 ,
+      x: 100
+    });
+  } else {
     // badgeEl.style.opacity = 0;
     // badgeEl.style.visibility = "hidden";
-      gsap.to(badgeEl,0.6,{
+    gsap.to(badgeEl,0.6,{
       opacity: 0 ,
       display: "none"
+    });
+    gsap.to(toTop,0.6,{
+      opacity: 1 ,
+      x: 0 // x축 0px지점으로 이동
     });
   }
   // opacity visibility => 애니메이션 가능 display => 애니메이션 불가능
@@ -156,6 +171,15 @@ gsap.to('.floating3',1.6,{
 const mainMenuItem = document.querySelectorAll('.item');
 const mainMenuItemContents = document.querySelectorAll('.item__contents');
 
+// document.mainMenuItem[0].addEventListener('click',console.log('1'));
+console.log(mainMenuItem[1].addEventListener('click',console.log('dd')));
+// function showSub() {
+//   if (true) {
+    
+//   }
+  
+// }
+
 // mainMenuItem.forEach(function (itemEl,index) {
 //   itemEl[index].addEventListener('mouseenter',function () {
 //     console.log(index);
@@ -204,5 +228,5 @@ new Swiper('.awards .swiper', {
 // 현재 연도 표시
 // 날짜 정보를 가진 JS date 객체를 활용 (js기본 제공 객체 : 여러 데이터들의 묶음)
 
-new Date().getFullYear(); // 현재 연도의 정보가 숫자 데이터로 변환됨
+// new Date().getFullYear(); // 현재 연도의 정보가 숫자 데이터로 변환됨
 document.querySelector('footer .copyright .this-year').innerHTML = new Date().getFullYear();

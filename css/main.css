@@ -1,3 +1,7 @@
+/* scroll이동을 부드럽게 해주는 css */
+html {
+  scroll-behavior: smooth;
+}
 /* Common */
 body { 
   /* 기본(공통) 스타일 */
@@ -995,3 +999,31 @@ footer .logo {
     margin-top:30px; */
   margin: 30px auto 0;
 }
+
+#to-top {
+  width: 42px;
+  height: 42px;
+  background-color: #333;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9;
+
+  /* 처음상태는 투명 */
+  opacity: 0;
+  /* visibility: hidden; */
+}
+
+#to-top a{
+  color: #fff;
+}
+

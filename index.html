@@ -20,7 +20,8 @@
   <!-- 애니메이션 라이브러리 GSAP -->
   <!-- 순서에 유의 할것! main.js보다 앞에 나와야함 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+  <!-- gsap ScrollToPlugin 순서주의 gsap.js 보다 더 뒤에! -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js" integrity="sha512-1PKqXBz2ju2JcAerHKL0ldg0PT/1vr3LghYAtc59+9xy8e19QEtaNUyt1gprouyWnpOPqNJjL4gXMRMEpHYyLQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <!-- SWIPER -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
@@ -609,5 +610,11 @@
         <img src="./images/starbucks_logo_only_text.png" class="logo" alt="">
       </div>
     </footer>
+
+    <!-- SCROLL TO TOP -->
+    <div id="to-top">
+      <!-- TIP! a태그와 css 속성을 사용한 최상단 이동 버튼 구현 -->
+      <a href="#"><span class="material-icons">arrow_upward</span></a>
+    </div>
 </body>
 </html>
