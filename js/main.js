@@ -200,3 +200,9 @@ new Swiper('.awards .swiper', {
     prevEl: '.awards .swiper-button-prev',
   }
 });
+
+// 현재 연도 표시
+// 날짜 정보를 가진 JS date 객체를 활용 (js기본 제공 객체 : 여러 데이터들의 묶음)
+
+new Date().getFullYear(); // 현재 연도의 정보가 숫자 데이터로 변환됨
+document.querySelector('footer .copyright .this-year').innerHTML = new Date().getFullYear();
